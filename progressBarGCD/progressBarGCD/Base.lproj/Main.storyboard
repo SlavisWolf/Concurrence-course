@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xIx-cX-F74">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Correct-->
+        <scene sceneID="S73-Ra-Arc">
+            <objects>
+                <viewController id="qgc-d8-4fn" customClass="CorrectProgressController" customModule="progressBarGCD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z0v-wH-Eyh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Correct progress bar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2H-PU-nir">
+                                <rect key="frame" x="20" y="83" width="353" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="GNe-51-iSh">
+                                <rect key="frame" x="39.333333333333343" y="361.66666666666669" width="314.33333333333326" height="104.66666666666669"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VWr-k9-b5Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Start"/>
+                                        <connections>
+                                            <action selector="start" destination="qgc-d8-4fn" eventType="touchUpInside" id="4br-0J-yhe"/>
+                                        </connections>
+                                    </button>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="32E-Wh-hFr">
+                                        <rect key="frame" x="0.0" y="50.333333333333314" width="314.33333333333331" height="4"/>
+                                    </progressView>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6u-5Z-EVZ">
+                                        <rect key="frame" x="0.0" y="70.333333333333314" width="314.33333333333331" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Pause"/>
+                                        <connections>
+                                            <action selector="pause" destination="qgc-d8-4fn" eventType="touchUpInside" id="GvI-Mm-abm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="obx-Ys-yxP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D2H-PU-nir" firstAttribute="top" secondItem="obx-Ys-yxP" secondAttribute="top" constant="24" id="2HS-Jl-w0e"/>
+                            <constraint firstItem="obx-Ys-yxP" firstAttribute="trailing" secondItem="D2H-PU-nir" secondAttribute="trailing" constant="20" id="7Pc-Rj-tIr"/>
+                            <constraint firstItem="GNe-51-iSh" firstAttribute="centerX" secondItem="obx-Ys-yxP" secondAttribute="centerX" id="Ye6-Ws-SsY"/>
+                            <constraint firstItem="32E-Wh-hFr" firstAttribute="width" secondItem="Z0v-wH-Eyh" secondAttribute="width" multiplier="0.8" id="bhl-OZ-fFQ"/>
+                            <constraint firstItem="GNe-51-iSh" firstAttribute="centerY" secondItem="obx-Ys-yxP" secondAttribute="centerY" id="c7c-7d-5h4"/>
+                            <constraint firstItem="D2H-PU-nir" firstAttribute="leading" secondItem="obx-Ys-yxP" secondAttribute="leading" constant="20" id="hDv-JD-6T9"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Correct" image="checkmark.square" catalog="system" selectedImage="checkmark.square.fill" id="UAB-Hd-N0Z"/>
+                    <connections>
+                        <outlet property="pauseBtn" destination="W6u-5Z-EVZ" id="Tky-Qu-EsZ"/>
+                        <outlet property="progressBar" destination="32E-Wh-hFr" id="fe0-A9-xdS"/>
+                        <outlet property="startBtn" destination="VWr-k9-b5Q" id="hSA-nq-b0y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GqK-lQ-xfZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="346" y="25"/>
+        </scene>
+        <!--Bad-->
+        <scene sceneID="jlo-LQ-41g">
+            <objects>
+                <viewController id="Suf-8l-9Hq" customClass="BadProgressController" customModule="progressBarGCD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wjH-af-qxh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bad progress bar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWu-XD-WcO">
+                                <rect key="frame" x="20" y="83" width="353" height="33.666666666666657"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="muY-3L-hUo">
+                                <rect key="frame" x="39.333333333333343" y="361.66666666666669" width="314.33333333333326" height="104.66666666666669"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKA-ze-s16">
+                                        <rect key="frame" x="0.0" y="0.0" width="314.33333333333331" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Start"/>
+                                        <connections>
+                                            <action selector="start" destination="Suf-8l-9Hq" eventType="touchUpInside" id="SU5-dt-jkT"/>
+                                        </connections>
+                                    </button>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lnx-44-fcc">
+                                        <rect key="frame" x="0.0" y="50.333333333333314" width="314.33333333333331" height="4"/>
+                                    </progressView>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIX-7P-cBC">
+                                        <rect key="frame" x="0.0" y="70.333333333333314" width="314.33333333333331" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Pause"/>
+                                        <connections>
+                                            <action selector="pause" destination="Suf-8l-9Hq" eventType="touchUpInside" id="ueg-KL-BWF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nfq-2c-ibQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="muY-3L-hUo" firstAttribute="centerX" secondItem="nfq-2c-ibQ" secondAttribute="centerX" id="8kr-Y6-CBn"/>
+                            <constraint firstItem="HWu-XD-WcO" firstAttribute="leading" secondItem="nfq-2c-ibQ" secondAttribute="leading" constant="20" id="DRx-Vl-Se7"/>
+                            <constraint firstItem="nfq-2c-ibQ" firstAttribute="trailing" secondItem="HWu-XD-WcO" secondAttribute="trailing" constant="20" id="OHu-Zh-gGW"/>
+                            <constraint firstItem="HWu-XD-WcO" firstAttribute="top" secondItem="nfq-2c-ibQ" secondAttribute="top" constant="24" id="QyZ-lv-LCs"/>
+                            <constraint firstItem="lnx-44-fcc" firstAttribute="width" secondItem="wjH-af-qxh" secondAttribute="width" multiplier="0.8" id="YSf-fK-kSr"/>
+                            <constraint firstItem="muY-3L-hUo" firstAttribute="centerY" secondItem="nfq-2c-ibQ" secondAttribute="centerY" id="eq9-78-KHj"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Bad" image="xmark.app" catalog="system" selectedImage="xmark.app.fill" id="foo-if-wPj"/>
+                    <connections>
+                        <outlet property="pauseBtn" destination="sIX-7P-cBC" id="K36-MY-efN"/>
+                        <outlet property="progressBar" destination="lnx-44-fcc" id="bfT-On-VWk"/>
+                        <outlet property="startBtn" destination="WKA-ze-s16" id="OhY-oC-zMw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZKT-9p-g6h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="347" y="-641"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Zq6-dH-v1U">
+            <objects>
+                <tabBarController id="xIx-cX-F74" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rrJ-Ot-33d">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Suf-8l-9Hq" kind="relationship" relationship="viewControllers" id="s6B-r7-oXh"/>
+                        <segue destination="qgc-d8-4fn" kind="relationship" relationship="viewControllers" id="Uuy-gz-aNP"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JXh-Gf-TI5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-558" y="-337"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark.square" catalog="system" width="128" height="114"/>
+        <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
+        <image name="xmark.app" catalog="system" width="128" height="114"/>
+        <image name="xmark.app.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
